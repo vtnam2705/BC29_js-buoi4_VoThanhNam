@@ -1,3 +1,6 @@
+var getID = function(id) {
+    return document.getElementById(id);
+}
 // Bài tập 1
 /*
     - Input: 
@@ -7,34 +10,37 @@
     - Output: Tiền lương nhân viên
 */
 
-document.getElementById("btn-result").onclick = function () {
-    var a = parseFloat(document.getElementById("soA").value);
-    var b = parseFloat(document.getElementById("soB").value);
-    var c = parseFloat(document.getElementById("soC").value);
+getID("btn-result").onclick = function () {
+    var a = parseFloat(getID("soA").value);
+    var b = parseFloat(getID("soB").value);
+    var c = parseFloat(getID("soC").value);
 
     if (a <= b && b <= c) {
-        var inKetQua = document.getElementById("result").innerHTML = `Sắp xếp theo thứ tự tăng dần: ${a} - ${b} - ${c}`;
-        document.getElementById("result").classList.add("alert-success");
+        var inKetQua = getID("result").innerHTML = `Sắp xếp theo thứ tự tăng dần: ${a} - ${b} - ${c}`;
+        getID("result").classList.add("alert-success");
     } else if (a <= c && c <= b) {
-        var inKetQua = document.getElementById("result").innerHTML = `Sắp xếp theo thứ tự tăng dần: ${a} - ${c} - ${b}`;
-        document.getElementById("result").classList.add("alert-success");
+        var inKetQua = getID("result").innerHTML = `Sắp xếp theo thứ tự tăng dần: ${a} - ${c} - ${b}`;
+        getID("result").classList.add("alert-success");
     } else if (b <= a && a <= c) {
-        var inKetQua = document.getElementById("result").innerHTML = `Sắp xếp theo thứ tự tăng dần: ${b} - ${a} - ${c}`;
-        document.getElementById("result").classList.add("alert-success");
+        var inKetQua = getID("result").innerHTML = `Sắp xếp theo thứ tự tăng dần: ${b} - ${a} - ${c}`;
+        getID("result").classList.add("alert-success");
     } else if (c <= a && a <= b) {
-        var inKetQua = document.getElementById("result").innerHTML = `Sắp xếp theo thứ tự tăng dần: ${c} - ${a} - ${b}`;
-        document.getElementById("result").classList.add("alert-success");
-    } else if (b <= a && b <= c && a >= c) {
-        var inKetQua = document.getElementById("result").innerHTML = `Sắp xếp theo thứ tự tăng dần: ${c} - ${b} - ${a}`;
-        document.getElementById("result").classList.add("alert-success");
+        var inKetQua = getID("result").innerHTML = `Sắp xếp theo thứ tự tăng dần: ${c} - ${a} - ${b}`;
+        getID("result").classList.add("alert-success");
+    } else if (a >= b && b >= c) {
+        var inKetQua = getID("result").innerHTML = `Sắp xếp theo thứ tự tăng dần: ${c} - ${b} - ${a}`;
+        getID("result").classList.add("alert-success");
     } else if (a == b && b == c) {
-        var inKetQua = document.getElementById("result").innerHTML = `Sắp xếp theo thứ tự tăng dần: ${a} - ${b} - ${c}`;
-        document.getElementById("result").classList.add("alert-success");
+        var inKetQua = getID("result").innerHTML = `Sắp xếp theo thứ tự tăng dần: ${a} - ${b} - ${c}`;
+        getID("result").classList.add("alert-success");
+    } else if(b <= a && b <= c && c <= a) {
+        var inKetQua = getID("result").innerHTML = `Sắp xếp theo thứ tự tăng dần: ${b} - ${c} - ${a}`;
+        getID("result").classList.add("alert-success");
     }
 }
 // else{
-// var inKetQua = document.getElementById("result").innerHTML = `Sắp xếp theo thứ tự tăng dần: ${c} - ${b} - ${a}`;
-// document.getElementById("result").classList.add("alert-success");
+// var inKetQua = getID("result").innerHTML = `Sắp xếp theo thứ tự tăng dần: ${c} - ${b} - ${a}`;
+// getID("result").classList.add("alert-success");
 // console.log(c, b, a);
 // }
 
@@ -70,8 +76,8 @@ document.getElementById("btn-result").onclick = function () {
         +  Trường hợp 5: nếu giá trị lựa chọn !== các giá trị trên => in ra kết quả "Welcome to CyberSoft"
     - Output: In ra câu chào.
 */
-document.getElementById("btn-ketQua").onclick = function () {
-    var ID = document.getElementById("selectPerson").value;
+getID("btn-ketQua").onclick = function () {
+    var ID = getID("selectPerson").value;
     switch (ID) {
         case "Bố":
             alert(`Xin chào ${ID} !!!`);
@@ -107,41 +113,41 @@ document.getElementById("btn-ketQua").onclick = function () {
     - Output: xuất ra có bao nhiêu số chẵn, số lẻ
 */
 
-document.getElementById("btnResult").onclick = function () {
-    var so1 = parseInt(document.getElementById("so-1").value);
-    var so2 = parseInt(document.getElementById("so-2").value);
-    var so3 = parseInt(document.getElementById("so-3").value);
+getID("btnResult").onclick = function () {
+    var so1 = parseInt(getID("so-1").value);
+    var so2 = parseInt(getID("so-2").value);
+    var so3 = parseInt(getID("so-3").value);
     var even = 0;
     var odd = 0;
 
     if (so1 % 2 == 0) {
         even++;
-        var inResult = document.getElementById("ketQua").innerHTML = `Có ${even} số chẵn`;
-        document.getElementById("ketQua").classList.add("alert-success");
+        var inResult = getID("ketQua").innerHTML = `Có ${even} số chẵn`;
+        getID("ketQua").classList.add("alert-success");
     } else {
         odd++;
-        var inResult = document.getElementById("ketQua").innerHTML = `Có ${odd} số lẻ`;
-        document.getElementById("ketQua").classList.add("alert-success");
+        var inResult = getID("ketQua").innerHTML = `Có ${odd} số lẻ`;
+        getID("ketQua").classList.add("alert-success");
     }
 
     if (so2 % 2 == 0) {
         even++;
-        var inResult = document.getElementById("ketQua").innerHTML = `Có ${even} số chẵn`;
-        document.getElementById("ketQua").classList.add("alert-success");
+        var inResult = getID("ketQua").innerHTML = `Có ${even} số chẵn`;
+        getID("ketQua").classList.add("alert-success");
     } else {
         odd++;
-        var inResult = document.getElementById("ketQua").innerHTML = `Có ${odd} số lẻ`;
-        document.getElementById("ketQua").classList.add("alert-success");
+        var inResult = getID("ketQua").innerHTML = `Có ${odd} số lẻ`;
+        getID("ketQua").classList.add("alert-success");
     }
 
     if (so3 % 2 == 0) {
         even++;
-        var inResult = document.getElementById("ketQua").innerHTML = `Có ${even} số chẵn`;
-        document.getElementById("ketQua").classList.add("alert-success");
+        var inResult = getID("ketQua").innerHTML = `Có ${even} số chẵn`;
+        getID("ketQua").classList.add("alert-success");
     } else {
         odd++;
-        var inResult = document.getElementById("ketQua").innerHTML = `Có ${odd} số lẻ`;
-        document.getElementById("ketQua").classList.add("alert-success");
+        var inResult = getID("ketQua").innerHTML = `Có ${odd} số lẻ`;
+        getID("ketQua").classList.add("alert-success");
     }
 }
 
@@ -182,40 +188,40 @@ document.getElementById("btnResult").onclick = function () {
     - Output: Từ giá trị a, b, c => loại tam giác
 */
 
-document.getElementById("btn-console").onclick = function () {
-    var a = document.getElementById("canh-a").value;
-    var b = document.getElementById("canh-b").value
-    var c = document.getElementById("canh-c").value;
+getID("btn-console").onclick = function () {
+    var a = getID("canh-a").value;
+    var b = getID("canh-b").value
+    var c = getID("canh-c").value;
 
     if (a == b && b == c) {
-        var inConsole = document.getElementById("inConsole").innerHTML = `Tam giác đều`;
-        document.getElementById("inConsole").classList.add("alert-success");
+        var inConsole = getID("inConsole").innerHTML = `Tam giác đều`;
+        getID("inConsole").classList.add("alert-success");
     } else {
-        var inConsole = document.getElementById("inConsole").innerHTML = `Hình tam giác`;
-        document.getElementById("inConsole").classList.add("alert-success");
+        var inConsole = getID("inConsole").innerHTML = `Hình tam giác`;
+        getID("inConsole").classList.add("alert-success");
     }
 
     // Tam giác cân
     if (a == b) {
         if (b != c) {
-            var inConsole = document.getElementById("inConsole").innerHTML = `Tam giác cân`;
-            document.getElementById("inConsole").classList.add("alert-success");
+            var inConsole = getID("inConsole").innerHTML = `Tam giác cân`;
+            getID("inConsole").classList.add("alert-success");
         }
     } else if (a == c) {
         if (c != b) {
-            var inConsole = document.getElementById("inConsole").innerHTML = `Tam giác cân`;
-            document.getElementById("inConsole").classList.add("alert-success");
+            var inConsole = getID("inConsole").innerHTML = `Tam giác cân`;
+            getID("inConsole").classList.add("alert-success");
         }
     } else if(b == c) {
         if (c != a) {
-            var inConsole = document.getElementById("inConsole").innerHTML = `Tam giác cân`;
-            document.getElementById("inConsole").classList.add("alert-success");
+            var inConsole = getID("inConsole").innerHTML = `Tam giác cân`;
+            getID("inConsole").classList.add("alert-success");
         }
     }
 
     // Tam giác vuông
     if (c == Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2))) {
-        var inConsole = document.getElementById("inConsole").innerHTML = `Tam giác vuông`;
-        document.getElementById("inConsole").classList.add("alert-success");
+        var inConsole = getID("inConsole").innerHTML = `Tam giác vuông`;
+        getID("inConsole").classList.add("alert-success");
     }
 }
